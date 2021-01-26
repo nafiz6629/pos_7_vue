@@ -15,6 +15,7 @@
               link="/left-page-2/"
               title="Left Page 2"
             ></f7-list-item>
+              <f7-button panel-close="left" @click="logout" raised fill>Logout</f7-button>
           </f7-list>
           <f7-block-title>Control Main View</f7-block-title>
           <f7-list>
@@ -130,7 +131,7 @@
     </f7-panel>
 
     <!-- Your main view, should have "view-main" class -->
-    <f7-view main class="safe-areas" url="/"></f7-view>
+    <f7-view browser-history browser-history-separator="" main class="safe-areas" url="/"></f7-view>
 
     <!-- Popup -->
     <f7-popup id="my-popup">
@@ -186,10 +187,8 @@ import { ref, onMounted } from "vue";
 import { f7, f7ready } from "framework7-vue";
 import { getDevice } from "../js/framework7-custom.js";
 import cordovaApp from "../js/cordova-app.js";
-
 import routes from "../js/routes.js";
 import store from "../js/store";
-
 export default {
   setup() {
     const device = getDevice();
@@ -249,5 +248,10 @@ export default {
       alertLoginData,
     };
   },
+  methods:{
+    logout(){
+      f7.views.main.router.navigate('/login/')
+    }
+  }
 };
 </script>
