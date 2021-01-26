@@ -1,6 +1,8 @@
 
 import { createStore } from 'framework7/lite';
 import { request } from 'framework7';
+import { f7, f7ready } from "framework7-vue";
+
 const store = createStore({
   state: {
 
@@ -15,9 +17,11 @@ const store = createStore({
     loginAuthentication({ state }, {data}) {
       request.post('http://localhost:8080/Login/login_authentication',JSON.stringify(data))
              .then((res)=>{
-               localStorage.setItem('usergroup',res.data)
-              //  console.log(localStorage.getItem('usergroup'));
-
+               if(res.data!=""){
+                 localStorage.setItem('usergroup',res.data)
+                }
+               console.log(localStorage.getItem('usergroup'));
+               f7.views.main.router.navigate('/')
              })
       
     },

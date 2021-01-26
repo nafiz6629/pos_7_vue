@@ -15,7 +15,7 @@
               link="/left-page-2/"
               title="Left Page 2"
             ></f7-list-item>
-              <f7-button panel-close="left" @click="logout" raised fill>Logout</f7-button>
+              <f7-button color="red" panel-close="left" @click="logout" raised fill>Logout</f7-button>
           </f7-list>
           <f7-block-title>Control Main View</f7-block-title>
           <f7-list>
@@ -248,8 +248,20 @@ export default {
       alertLoginData,
     };
   },
+  mounted(){
+    if(localStorage.getItem('usergroup')!=null){
+      // console.log(localStorage.getItem('usergroup'))
+    }
+    else{
+      f7.views.main.router.navigate('/login/')
+
+    }
+  },
   methods:{
     logout(){
+      // console.log(localStorage.getItem('usergroup'))
+      localStorage.removeItem('usergroup')
+      // console.log(localStorage.getItem('usergroup'))
       f7.views.main.router.navigate('/login/')
     }
   }

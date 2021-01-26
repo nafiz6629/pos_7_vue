@@ -12,12 +12,12 @@ import NotFoundPage from '../pages/404.vue';
 
 var routes = [
   {
-    path: '/',
-    component: HomePage,
-  },
-  {
     path: '/login/',
     component: LoginPage,
+  },
+  {
+    path: '/',
+    component: HomePage,
   },
   {
     path: '/about/',
