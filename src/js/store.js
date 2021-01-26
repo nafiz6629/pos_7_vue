@@ -21,7 +21,7 @@ const store = createStore({
                  localStorage.setItem('usergroup',res.data)
                 }
                console.log(localStorage.getItem('usergroup'));
-               f7.views.main.router.navigate('/')
+               f7.views.main.router.navigate('/home/')
              })
       
     },
