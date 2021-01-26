@@ -1,5 +1,6 @@
 
 import HomePage from '../pages/home.vue';
+import EmptyPage from '../pages/empty.vue';
 import LoginPage from '../pages/login.vue';
 import AboutPage from '../pages/about.vue';
 import FormPage from '../pages/form.vue';
@@ -12,11 +13,15 @@ import NotFoundPage from '../pages/404.vue';
 
 var routes = [
   {
+    path: '/',
+    component: EmptyPage,
+  },
+  {
     path: '/login/',
     component: LoginPage,
   },
   {
-    path: '/',
+    path: '/home/',
     component: HomePage,
   },
   {
