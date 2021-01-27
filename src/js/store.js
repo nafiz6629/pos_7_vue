@@ -8,6 +8,7 @@ const store = createStore({
   state: {
     items: [],
     ledgers: [],
+    suppliers: [],
   },
   getters: {
     items({ state }) {
@@ -15,9 +16,32 @@ const store = createStore({
     },
     ledgers({ state }) {
       return state.ledgers;
+    },
+    suppliers({ state }) {
+      return state.suppliers;
     }
   },
   actions: {
+    loginAuthentication({ state }, {data}) {
+      request.post('http://localhost:8080/Login/login_authentication',JSON.stringify(data))
+             .then((res)=>{
+               if(res.data!=""){
+                 localStorage.setItem('usergroup',res.data)
+                }
+               console.log(localStorage.getItem('usergroup'));
+               f7.views.main.router.navigate('/home/')
+             })
+      
+    },
+    //suppliers
+    async get_suppliers({ state }) {         
+      fetch('http://localhost:8080/Supplier/supplier_list')
+        .then((res) => res.json())
+        .then((suppliers) => {              
+          state.suppliers = suppliers;               
+        })           
+    },
+    //suppliers ends
     //
     async get_items({ state }) {         
       fetch('http://localhost:8080/item_list/item_list')
@@ -35,17 +59,7 @@ const store = createStore({
         })           
     },
     //ends
-    loginAuthentication({ state }, {data}) {
-      request.post('http://localhost:8080/Login/login_authentication',JSON.stringify(data))
-             .then((res)=>{
-               if(res.data!=""){
-                 localStorage.setItem('usergroup',res.data)
-                }
-               console.log(localStorage.getItem('usergroup'));
-               f7.views.main.router.navigate('/home/')
-             })
-      
-    },
+    
   },
 })
 export default store;

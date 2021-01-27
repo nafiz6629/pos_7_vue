@@ -71,9 +71,10 @@
               link="/left-page-2/"
               title="Purchase Report"
             ></f7-list-item>
-            <f7-list-item link="/customer/" view=".view-main" title="Customer"></f7-list-item>
-            <f7-list-item link="/ledger/" view=".view-main" title="Ledger"></f7-list-item>
-            <f7-list-item link="/left-page-2/" title="Day Book"></f7-list-item>
+            <f7-list-item panel-close="right" link="/supplier/" view=".view-main" title="Supplier"></f7-list-item>
+            <f7-list-item panel-close="right" link="/customer/" view=".view-main" title="Customer"></f7-list-item>
+            <f7-list-item panel-close="right" link="/ledger/" view=".view-main" title="Ledger"></f7-list-item>
+            <f7-list-item panel-close="right" link="/left-page-2/" title="Day Book"></f7-list-item>
             <f7-list-item
               link="/left-page-2/"
               title="All Transactions"

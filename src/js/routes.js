@@ -5,11 +5,12 @@ import LoginPage from '../pages/login.vue';
 import AboutPage from '../pages/about.vue';
 import FormPage from '../pages/form.vue';
 
+import SupplierPage from '../pages/supplier/index.vue';
+
 
 
 import ItemsPage from '../pages/itemlist/items.vue';
 import ItemDetails from '../pages/itemlist/item-details.vue';
-
 import LedgerPage from '../pages/ledger/index.vue';
 
 import LeftPage1 from '../pages/left-page-1.vue';
@@ -31,6 +32,12 @@ var routes = [
     path: '/home/',
     component: HomePage,
   },
+  //supplier starts
+  {
+    path: '/supplier/',   
+    component: SupplierPage,      
+  },
+  //supplier ends
   {
     path: '/about/',
     component: AboutPage,
