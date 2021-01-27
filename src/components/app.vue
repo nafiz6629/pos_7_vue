@@ -1,5 +1,5 @@
 <template>
-  <f7-app  v-bind="f7params">
+  <f7-app theme-dark  v-bind="f7params">
     <f7-view browser-history browser-history-separator="" main class="safe-areas" url="/"></f7-view>
 
 
@@ -74,6 +74,7 @@ export default {
   mounted(){
     if(localStorage.getItem('usergroup')!=null){
       // console.log(localStorage.getItem('usergroup'))
+      f7.views.main.router.navigate('/home/')
     }
     else{
       f7.views.main.router.navigate('/login/')
