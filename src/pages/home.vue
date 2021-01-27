@@ -66,10 +66,13 @@
               link="/left-page-1/"
               title="Sale Report"
             ></f7-list-item>
+            
             <f7-list-item
               link="/left-page-2/"
               title="Purchase Report"
             ></f7-list-item>
+            <f7-list-item link="/customer/" view=".view-main" title="Customer"></f7-list-item>
+            <f7-list-item link="/ledger/" view=".view-main" title="Ledger"></f7-list-item>
             <f7-list-item link="/left-page-2/" title="Day Book"></f7-list-item>
             <f7-list-item
               link="/left-page-2/"
@@ -132,10 +135,11 @@
               title="Inventory Log Book"
             ></f7-list-item>
             <f7-list-item
-              link="/form/"
+              link="/item-list/"
               view=".view-main"
               title="Item List"
             ></f7-list-item>
+            
           </f7-list>
           <f7-block>Right panel content goes here</f7-block>
         </f7-page>

@@ -5,6 +5,13 @@ import LoginPage from '../pages/login.vue';
 import AboutPage from '../pages/about.vue';
 import FormPage from '../pages/form.vue';
 
+
+
+import ItemsPage from '../pages/itemlist/items.vue';
+import ItemDetails from '../pages/itemlist/item-details.vue';
+
+import LedgerPage from '../pages/ledger/index.vue';
+
 import LeftPage1 from '../pages/left-page-1.vue';
 import LeftPage2 from '../pages/left-page-2.vue';
 import DynamicRoutePage from '../pages/dynamic-route.vue';
@@ -41,6 +48,29 @@ var routes = [
     path: '/left-page-2/',
     component: LeftPage2,
   },
+  // starts
+  {
+    path: '/item-list/',
+    component: ItemsPage,
+    props:  true 
+  },
+    
+
+  {
+    path: '/item-details/:id',   
+    component: ItemDetails,
+    props:true   
+  },
+
+  {
+    path: '/customer/',   
+    component: LedgerPage,      
+  },
+  {
+    path: '/ledger/',   
+    component: LedgerPage,      
+  },
+  // ends 
   {
     path: '/dynamic-route/blog/:blogId/post/:postId/',
     component: DynamicRoutePage,
